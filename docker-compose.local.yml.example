@@ -1,0 +1,10 @@
+version: '2'
+services:
+  php:
+    volumes:
+      - ${DEV_CODE_PATH}:/code
+  nginx:
+    ports:
+      - 8000:80
+    volumes:
+      - ${DEV_CODE_PATH}:/code

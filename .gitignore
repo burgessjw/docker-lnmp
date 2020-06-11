@@ -1,0 +1,5 @@
+/nginx/sites.conf.template
+
+.env
+
+docker-compose.local.yml
