@@ -1,10 +1,18 @@
 version: '2'
+#networks:
+#  traefik_default:
+#    external: true
+volumes:
+  dev_home:
+    external: true
+  composer_home:
+    external: true
 services:
   php:
     volumes:
+      - composer_home:/tmp/composer
+      - dev_home:/home/dev/
       - ${DEV_CODE_PATH}:/code
   nginx:
-    ports:
-      - 8000:80
     volumes:
       - ${DEV_CODE_PATH}:/code
